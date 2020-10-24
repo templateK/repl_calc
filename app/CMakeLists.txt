@@ -6,3 +6,8 @@ add_executable (calc main.c)
 # public include directories we will use those link directories when building
 # "calc" binary.
 target_link_libraries (calc LINK_PUBLIC libparse)
+
+add_custom_target(run
+                  COMMAND calc
+                  WORKING_DIRECTORY $<TARGET_FILE_DIR:calc>)
+                   
