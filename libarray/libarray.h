@@ -17,5 +17,6 @@ bool array_set(Array *array, int idx, void *data);
 bool array_is_full(const Array *array);
 bool array_is_empty(const Array *array);
 void *array_get(const Array *array, int idx);
+void display_array(Array *array);
 
 #endif

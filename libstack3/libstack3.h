@@ -17,5 +17,6 @@ void *pop3(Stack3 *stack);
 void *peek3(const Stack3 *stack);
 bool is_empty3(const Stack3 *stack);
 bool is_full3(const Stack3 *stack);
+void display_stack3(const Stack3 *stack);
 
 #endif

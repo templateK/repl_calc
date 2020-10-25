@@ -40,3 +40,9 @@ void *peek3(const Stack3 *stack) {
     return stack->arr[stack->top];
 }
 
+void display_stack3(const Stack3 *stack) {
+    int size = stack->top + 1;
+    for(int i = 0; i < size; i++) {
+        printf("%c", *(char *)stack->arr[i]);
+    }
+}

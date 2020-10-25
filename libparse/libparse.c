@@ -89,11 +89,11 @@ void pop_high_precedence_operators(char *operator, Stack3 *sp, Array *arr) {
         int current_precedence = precedence(operator);
         int stack_precedence = precedence(peek3(sp));
         while ( !is_empty3(sp) ) {
-            if (current_precedence > stack_precedence) {
+            if (current_precedence >= stack_precedence) {
                 break;
             }
-            array_push(arr, pop3(sp));
             stack_precedence = precedence(peek3(sp));
+            array_push(arr, pop3(sp));
         }
         push3(sp, operator);
     }
@@ -102,7 +102,6 @@ void pop_high_precedence_operators(char *operator, Stack3 *sp, Array *arr) {
 Array infix2postfix(const char *input)  {
     Stack3 stack = create_stack3();
     Array  array = create_array();
-
     for(int i=0; i < strlen(input); i++) {
         void *c = (void *)(input + i);
         if ( is_open_paren(c)) {
@@ -118,3 +117,4 @@ Array infix2postfix(const char *input)  {
     append_all(&array, &stack);
     return array;
 }
+

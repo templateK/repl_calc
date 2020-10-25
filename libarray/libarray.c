@@ -39,3 +39,11 @@ void *array_get(const Array *array, int idx) {
     }
     return array->arr[idx];
 }
+
+void display_array(Array *array) {
+    int size = array->end + 1;
+    for(int i =0; i < size; i++) {
+        printf("%c", *(char *)array_get(array, i));
+    }
+    printf("\n");
+}

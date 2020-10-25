@@ -101,6 +101,16 @@ int main() {
     assert(*(char *)array_get(&postfix_array2, 0) ==  'A');
     assert(*(char *)array_get(&postfix_array2, 1) ==  'B');
     assert(*(char *)array_get(&postfix_array2, 2) ==  '+');
+
+    char *input7 = "A + B + C";
+    Array postfix_array3 = infix2postfix(input7);
+    /* assert(postfix_array2.end == 4); */
+    /* assert(*(char *)array_get(&postfix_array3, 0) ==  'A'); */
+    /* assert(*(char *)array_get(&postfix_array3, 1) ==  'B'); */
+    /* assert(*(char *)array_get(&postfix_array3, 2) ==  'C'); */
+    /* assert(*(char *)array_get(&postfix_array3, 3) ==  '+'); */
+    /* assert(*(char *)array_get(&postfix_array3, 4) ==  '+'); */
+
     printf("SUCCESS");
 
     return 0;
