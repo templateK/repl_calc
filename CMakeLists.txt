@@ -9,8 +9,15 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # cause another cmake executable to run. The same process will walk through
 # the project's entire directory structure.
 add_subdirectory (app)
-add_subdirectory (libparse)
 add_subdirectory (libstack)
+add_subdirectory (libstack2)
+add_subdirectory (libstack3)
+add_subdirectory (libarray)
+
+get_target_property(libstack3_include libstack3 INCLUDE_DIRECTORIES)
+get_target_property(libarray_include libarray INCLUDE_DIRECTORIES)
+
+add_subdirectory (libparse)
 
 enable_testing()
 add_subdirectory (test)
