@@ -83,16 +83,16 @@ void pop_until_open_paren(Stack3 *sp, Array *arr) {
 }
 
 void pop_high_precedence_operators(char *operator, Stack3 *sp, Array *arr) {
+    assert(is_operator(operator));
     if ( is_empty3(sp) ) {
         push3(sp, operator);
     } else {
         int current_precedence = precedence(operator);
-        int stack_precedence = precedence(peek3(sp));
         while ( !is_empty3(sp) ) {
+            int stack_precedence = precedence(peek3(sp));
             if (current_precedence >= stack_precedence) {
                 break;
             }
-            stack_precedence = precedence(peek3(sp));
             array_push(arr, pop3(sp));
         }
         push3(sp, operator);
